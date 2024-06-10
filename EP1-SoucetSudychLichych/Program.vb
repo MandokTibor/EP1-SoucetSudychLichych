@@ -45,3 +45,17 @@ Module Program
         End While
     End Function
 
+    Function GetNumber(index As Integer) As Integer
+        While True
+            Console.WriteLine($"Zadejte èíslo {index}:")
+            Dim input As String = Console.ReadLine()
+            Dim number As Integer
+            If Integer.TryParse(input, number) AndAlso number >= 0 Then
+                Return number
+            Else
+                Console.WriteLine("Neplatný vstup, zadejte kladné celé èíslo.")
+            End If
+        End While
+    End Function
+
+End Module
