@@ -31,3 +31,17 @@ Module Program
             End If
         End While
     End Sub
+
+    Function GetTotalNumbers() As Integer
+        While True
+            Console.WriteLine("Zadejte celkový poèet èísel:")
+            Dim input As String = Console.ReadLine()
+            Dim totalNumbers As Integer
+            If Integer.TryParse(input, totalNumbers) AndAlso totalNumbers > 0 Then
+                Return totalNumbers
+            Else
+                Console.WriteLine("Neplatný vstup, zadejte kladné celé èíslo.")
+            End If
+        End While
+    End Function
+
